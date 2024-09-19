@@ -24,6 +24,7 @@ Patch0:   0001-workaround-sb2-filecopy-bug.patch
 
 BuildRequires: clang
 BuildRequires: make
+BuildRequires: ninja
 BuildRequires: cups-devel
 BuildRequires: desktop-file-utils
 BuildRequires: findutils
