@@ -1,0 +1,4 @@
+from Config import *
+
+addFilter("opt-qt6.* dir-or-file-in-opt")
+addFilter("opt-qt6.* binary-or-shlib-defines-rpath")
