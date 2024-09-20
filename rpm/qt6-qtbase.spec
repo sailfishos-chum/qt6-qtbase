@@ -80,13 +80,9 @@ Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 Requires: %{name}-gui%{?_isa}
 Requires: libEGL-devel
-Requires: pkgconfig(gl)
 Requires: pkgconfig(xkbcommon)
 Requires: qt6-rpm-macros
 Requires: clang >= 3.7.0
-Requires: %{name}-mysql%{?_isa} = %{version}-%{release}
-Requires: %{name}-odbc%{?_isa} = %{version}-%{release}
-Requires: %{name}-postgresql%{?_isa} = %{version}-%{release}
 %description devel
 %{summary}.
 
@@ -101,7 +97,6 @@ Summary: Static library files for %{name}
 Requires: %{name}-devel%{?_isa} = %{version}-%{release}
 Requires: pkgconfig(fontconfig)
 Requires: pkgconfig(glib-2.0)
-Requires: pkgconfig(libinput)
 Requires: pkgconfig(xkbcommon)
 Requires: pkgconfig(zlib)
 
