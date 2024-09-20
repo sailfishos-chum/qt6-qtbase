@@ -80,6 +80,7 @@ Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 Requires: %{name}-gui%{?_isa}
 Requires: libEGL-devel
+Requires: pkgconfig(glesv2)
 Requires: pkgconfig(xkbcommon)
 Requires: qt6-rpm-macros
 Requires: clang >= 3.7.0
