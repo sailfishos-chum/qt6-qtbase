@@ -4,6 +4,16 @@
 %global qt_module qtbase
 %global rpm_macros_dir %(d=%{_rpmconfigdir}/macros.d; [ -d $d ] || d=%{_qt6_sysconfdir}/rpm; echo $d)
 
+# Do not check any files in %%{_qt6_plugindir}/platformthemes/ for requires.
+# Those themes are there for platform integration. If the required libraries are
+# not there, the platform to integrate with isn't either. Then Qt will just
+# silently ignore the plugin that fails to load. Thus, there is no need to let
+# RPM drag in gtk3 as a dependency for the GTK+3 dialog support.
+%global __requires_exclude_from ^%{_qt6_plugindir}/platformthemes/.*$
+# filter plugin provides
+%global __provides_exclude_from ^%{_qt6_plugindir}/.*\\.so$
+
+
 %global qt_version 6.7.2
 
 Name: qt6-qtbase
@@ -18,13 +28,9 @@ Source0: %{name}-%{version}.tar.bz2
 Source1: qtlogging.ini
 # macros
 Source10: macros.qt6-qtbase
-Source100: qtbase-rpmlintrc
 
 Patch0:   0001-workaround-sb2-filecopy-bug.patch
 
-BuildRequires: clang
-BuildRequires: make
-BuildRequires: ninja
 BuildRequires: cups-devel
 BuildRequires: desktop-file-utils
 BuildRequires: findutils
@@ -124,6 +130,7 @@ mv harfbuzz-ng freetype libjpeg libpng sqlite zlib UNUSED/
 popd
 
 %build
+
 touch .git
 
 %cmake_qt6 \
