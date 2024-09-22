@@ -31,7 +31,9 @@ Source10: macros.qt6-qtbase
 
 Patch0:   0001-workaround-sb2-filecopy-bug.patch
 
-BuildRequires: cups-devel
+BuildRequires: clang
+BuildRequires: make
+BuildRequires: ninja
 BuildRequires: desktop-file-utils
 BuildRequires: findutils
 BuildRequires: libjpeg-devel
@@ -64,7 +66,6 @@ BuildRequires: pkgconfig(xkbcommon)
 BuildRequires: perl
 BuildRequires: python3-base
 BuildRequires: wayland-devel
-BuildRequires: wayland-protocols-devel
 BuildRequires: qt6-rpm-macros
 
 Requires: %{name}-common = %{version}-%{release}
