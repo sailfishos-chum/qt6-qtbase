@@ -63,6 +63,8 @@ BuildRequires: pkgconfig(libproxy-1.0)
 BuildRequires: pkgconfig(xkbcommon)
 BuildRequires: perl
 BuildRequires: python3-base
+BuildRequires: wayland-devel
+BuildRequires: wayland-protocols-devel
 BuildRequires: qt6-rpm-macros
 
 Requires: %{name}-common = %{version}-%{release}
@@ -158,6 +160,7 @@ touch .git
  -DQT_FEATURE_dbus_linked=ON \
  -DQT_FEATURE_system_pcre2=ON \
  -DQT_FEATURE_system_sqlite=ON \
+ -DQT_FEATURE_wayland=ON \
  -DBUILD_SHARED_LIBS=ON \
  -DQT_BUILD_EXAMPLES=OFF \
  -DQT_INSTALL_EXAMPLES_SOURCES=OFF \
