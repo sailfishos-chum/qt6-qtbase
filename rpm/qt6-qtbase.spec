@@ -1,3 +1,5 @@
+%global qt_version 6.7.2
+
 # Disable automatic .la file removal
 %global __brp_remove_la_files %nil
 %global platform linux-clang
@@ -14,11 +16,9 @@
 %global __provides_exclude_from ^%{_qt6_plugindir}/.*\\.so$
 
 
-%global qt_version 6.7.2
-
 Name: qt6-qtbase
 Summary: Qt6 - QtBase components
-Version: 6.7.2+kde1
+Version: 6.7.2
 Release: 0%{?dist}
 
 # See LGPL_EXCEPTIONS.txt, for exception details
@@ -31,9 +31,7 @@ Source10: macros.qt6-qtbase
 
 Patch0:   0001-workaround-sb2-filecopy-bug.patch
 
-BuildRequires: clang
-BuildRequires: make
-BuildRequires: ninja
+BuildRequires: qt6-rpm-macros
 BuildRequires: cups-devel
 BuildRequires: desktop-file-utils
 BuildRequires: findutils
@@ -67,7 +65,7 @@ BuildRequires: pkgconfig(xkbcommon)
 BuildRequires: perl
 BuildRequires: python3-base
 BuildRequires: wayland-devel
-BuildRequires: qt6-rpm-macros
+
 
 Requires: %{name}-common = %{version}-%{release}
 
