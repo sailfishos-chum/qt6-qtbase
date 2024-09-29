@@ -2,8 +2,6 @@
 
 # Disable automatic .la file removal
 %global __brp_remove_la_files %nil
-%global platform linux-clang
-%global qt_module qtbase
 %global rpm_macros_dir %(d=%{_rpmconfigdir}/macros.d; [ -d $d ] || d=%{_qt6_sysconfdir}/rpm; echo $d)
 
 # Do not check any files in %%{_qt6_plugindir}/platformthemes/ for requires.
@@ -165,7 +163,7 @@ touch .git
  -DQT_BUILD_EXAMPLES=OFF \
  -DQT_INSTALL_EXAMPLES_SOURCES=OFF \
  -DQT_BUILD_TESTS=OFF \
- -DQT_QMAKE_TARGET_MKSPEC=%{platform} \
+ -DQT_QMAKE_TARGET_MKSPEC=%{_qt6_platform} \
  -DQT_AVOID_CMAKE_ARCHIVING_API=ON
 
 %cmake_build
