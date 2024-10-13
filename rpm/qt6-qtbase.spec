@@ -225,6 +225,8 @@ rm %{buildroot}/%{_qt6_libexecdir}/qt-cmake-private-install.cmake
 # Use better location for some new scripts
 mv %{buildroot}/%{_qt6_libexecdir}/ensure_pro_file.cmake %{buildroot}/%{_qt6_libdir}/cmake/Qt6/ensure_pro_file.cmake
 
+#Remove unversioned files that clash with qt5/chooser
+rm %{buildroot}/%{_bindir}/qmake
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
@@ -307,7 +309,7 @@ mv %{buildroot}/%{_qt6_libexecdir}/ensure_pro_file.cmake %{buildroot}/%{_qt6_lib
 %{_bindir}/androidtestrunner
 %{_bindir}/qdbuscpp2xml*
 %{_bindir}/qdbusxml2cpp*
-%{_bindir}/qmake*
+%{_bindir}/qmake6
 %{_bindir}/qt-cmake
 %{_bindir}/qt-cmake-create
 %{_bindir}/qt-configure-module
