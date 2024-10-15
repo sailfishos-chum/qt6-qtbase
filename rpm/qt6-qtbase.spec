@@ -27,8 +27,6 @@ Source1: qtlogging.ini
 # macros
 Source10: macros.qt6-qtbase
 
-Patch0:   0001-workaround-sb2-filecopy-bug.patch
-
 BuildRequires: qt6-rpm-macros
 BuildRequires: cups-devel
 BuildRequires: desktop-file-utils
