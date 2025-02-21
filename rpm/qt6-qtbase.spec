@@ -342,6 +342,7 @@ rm %{buildroot}/%{_bindir}/qmake
 %{_qt6_headerdir}/QtDBus/
 %{_qt6_headerdir}/QtInputSupport
 %{_qt6_headerdir}/QtExampleIcons
+%{_qt6_headerdir}/QtExamplesAssetDownloader/
 %{_qt6_headerdir}/QtGui/
 %{_qt6_headerdir}/QtNetwork/
 %{_qt6_headerdir}/QtOpenGL/
@@ -401,9 +402,11 @@ rm %{buildroot}/%{_bindir}/qmake
 %{_qt6_libdir}/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules/*.cmake
 %{_qt6_libdir}/cmake/Qt6/3rdparty/extra-cmake-modules/modules/*.cmake
 %{_qt6_libdir}/cmake/Qt6/3rdparty/extra-cmake-modules/qt_attribution.json
+%{_qt6_libdir}/cmake/Qt6/3rdparty/extra-cmake-modules/REUSE.toml
 %{_qt6_libdir}/cmake/Qt6/3rdparty/kwin/COPYING-CMAKE-SCRIPTS
 %{_qt6_libdir}/cmake/Qt6/3rdparty/kwin/*.cmake
 %{_qt6_libdir}/cmake/Qt6/3rdparty/kwin/qt_attribution.json
+%{_qt6_libdir}/cmake/Qt6/3rdparty/kwin/REUSE.toml
 %{_qt6_libdir}/cmake/Qt6BuildInternals/*.cmake
 %{_qt6_libdir}/cmake/Qt6BuildInternals/QtStandaloneTestTemplateProject/CMakeLists.txt
 %{_qt6_libdir}/cmake/Qt6BuildInternals/StandaloneTests/QtBaseTestsConfig.cmake
@@ -420,6 +423,7 @@ rm %{buildroot}/%{_bindir}/qmake
 %{_qt6_libdir}/cmake/Qt6EglFsKmsGbmSupportPrivate/*.cmake
 %{_qt6_libdir}/cmake/Qt6EglFsKmsSupportPrivate/*.cmake
 %{_qt6_libdir}/cmake/Qt6ExampleIconsPrivate/*.cmake
+%{_qt6_libdir}/cmake/Qt6ExamplesAssetDownloaderPrivate/*.cmake
 %{_qt6_libdir}/cmake/Qt6FbSupportPrivate/*.cmake
 %{_qt6_libdir}/cmake/Qt6Gui/*.cmake
 %{_qt6_libdir}/cmake/Qt6GuiTools/*.cmake
@@ -433,14 +437,20 @@ rm %{buildroot}/%{_bindir}/qmake
 %{_qt6_libdir}/cmake/Qt6Sql/Qt6Sql*.cmake
 %{_qt6_libdir}/cmake/Qt6Sql/Qt6QSQLiteDriverPlugin*.cmake
 %{_qt6_libdir}/cmake/Qt6Test/*.cmake
+%{_qt6_libdir}/cmake/Qt6TestInternalsPrivate/3rdparty/cmake/*.cmake
+%{_qt6_libdir}/cmake/Qt6TestInternalsPrivate/*.cmake
 %{_qt6_libdir}/cmake/Qt6Widgets/*.cmake
 %{_qt6_libdir}/cmake/Qt6WidgetsTools/*.cmake
 %{_qt6_libdir}/cmake/Qt6Xml/*.cmake
+%{_qt6_libdir}/qt6/sbom/*.spdx
 %{_qt6_libdir}/qt6/metatypes/*.json
 %{_qt6_libdir}/pkgconfig/*.pc
 %{_qt6_libdir}/libQt6EglFsKmsSupport.prl
 %{_qt6_libdir}/libQt6EglFsKmsSupport.so
 %{_qt6_libdir}/objects-RelWithDebInfo/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.o
+
+
+%exclude %{_qt6_libdir}/qt6/libexec/qt-android-runner.py
 
 ## private-devel globs
 %exclude %{_qt6_headerdir}/*/%{qt_version}/
@@ -454,6 +464,8 @@ rm %{buildroot}/%{_bindir}/qmake
 %{_qt6_libdir}/libQt6DeviceDiscoverySupport.prl
 %{_qt6_libdir}/libQt6ExampleIcons.a
 %{_qt6_libdir}/libQt6ExampleIcons.prl
+%{_qt6_libdir}/libQt6ExamplesAssetDownloader.*a
+%{_qt6_libdir}/libQt6ExamplesAssetDownloader.prl
 %{_qt6_headerdir}/QtFbSupport
 %{_qt6_libdir}/libQt6FbSupport.*a
 %{_qt6_libdir}/libQt6FbSupport.prl
