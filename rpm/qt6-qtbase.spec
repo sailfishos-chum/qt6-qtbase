@@ -440,7 +440,7 @@ rm %{buildroot}/%{_bindir}/qmake
 %{_qt6_libdir}/cmake/Qt6Widgets/*.cmake
 %{_qt6_libdir}/cmake/Qt6WidgetsTools/*.cmake
 %{_qt6_libdir}/cmake/Qt6Xml/*.cmake
-%{_qt6_libdir}/qt6/sbom/*.spdx
+#%%{_qt6_libdir}/qt6/sbom/*.spdx
 %{_qt6_libdir}/qt6/metatypes/*.json
 %{_qt6_libdir}/pkgconfig/*.pc
 %{_qt6_libdir}/libQt6EglFsKmsSupport.prl
