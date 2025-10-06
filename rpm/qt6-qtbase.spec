@@ -27,6 +27,8 @@ Source1: qtlogging.ini
 # macros
 Source10: macros.qt6-qtbase
 
+Patch10: 0010-disable-arm32-pixman-simd.patch
+
 BuildRequires: qt6-rpm-macros
 BuildRequires: cups-devel
 BuildRequires: desktop-file-utils
