@@ -287,7 +287,7 @@ rm %{buildroot}/%{_bindir}/qmake
 %license LICENSES/GPL*
 %license LICENSES/LGPL*
 %dir %{_sysconfdir}/xdg/QtProject/
-%{_qt6_archdatadir}/sbom/qtbase-%{qt_version}.spdx
+#%%{_qt6_archdatadir}/sbom/qtbase-%%{qt_version}.spdx
 %{_qt6_libdir}/libQt6Concurrent.so.6*
 %{_qt6_libdir}/libQt6Core.so.6*
 %{_qt6_libdir}/libQt6DBus.so.6*
@@ -517,7 +517,7 @@ rm %{buildroot}/%{_bindir}/qmake
 %dir %{_qt6_libdir}/cmake/Qt6EglFSDeviceIntegrationPrivate
 %dir %{_qt6_libdir}/cmake/Qt6EglFsKmsGbmSupportPrivate
 %dir %{_qt6_libdir}/cmake/Qt6EglFsKmsSupportPrivate
-#%%dir %{_qt6_libdir}/cmake/Qt6XcbQpaPrivate
+#%%dir %%{_qt6_libdir}/cmake/Qt6XcbQpaPrivate
 %{_qt6_libdir}/cmake/Qt6EglFSDeviceIntegrationPrivate/*.cmake
 %{_qt6_libdir}/cmake/Qt6EglFsKmsGbmSupportPrivate/*.cmake
 %{_qt6_libdir}/cmake/Qt6EglFsKmsSupportPrivate/*.cmake
@@ -608,7 +608,7 @@ rm %{buildroot}/%{_bindir}/qmake
 #%%{_qt6_plugindir}/egldeviceintegrations/libqeglfs-x11-integration.so
 %{_qt6_plugindir}/egldeviceintegrations/libqeglfs-kms-egldevice-integration.so
 %{_qt6_plugindir}/egldeviceintegrations/libqeglfs-emu-integration.so
-#%%dir %{_qt6_plugindir}/xcbglintegrations/
+#%%dir %%{_qt6_plugindir}/xcbglintegrations/
 #%%{_qt6_plugindir}/xcbglintegrations/libqxcb-egl-integration.so
 
 # Platforms
