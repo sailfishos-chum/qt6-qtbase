@@ -14,6 +14,8 @@
 %global __provides_exclude_from ^%{_qt6_plugindir}/.*\\.so$
 
 
+%bcond_with vulkan
+
 Name:    qt6-qtbase
 Summary: Qt6 - QtBase components
 Version: 6.8.3
@@ -70,6 +72,10 @@ BuildRequires: pkgconfig(openssl)
 BuildRequires: pkgconfig(libpulse) pkgconfig(libpulse-mainloop-glib)
 
 BuildRequires: pkgconfig(xkbcommon)
+
+%if %{with vulkan}
+BuildRequires: vulkan-headers
+%endif
 
 BuildRequires: pkgconfig(egl)
 BuildRequires: pkgconfig(gbm)
@@ -201,6 +207,9 @@ touch .git
  -DQT_FEATURE_egl_x11=OFF \
  -DQT_FEATURE_eglfs_x11=OFF \
  -DQT_FEATURE_forkfd_pidfd=OFF \
+%if %{with vulkan}
+ -DQT_FEATURE_vulkan=ON \
+%endif
  %{nil}
 
 %cmake_build
@@ -616,6 +625,9 @@ rm %{buildroot}/%{_bindir}/qmake
 %{_qt6_plugindir}/platforms/libqoffscreen.so
 #%%{_qt6_plugindir}/platforms/libqxcb.so
 %{_qt6_plugindir}/platforms/libqvnc.so
+%if %{with vulkan}
+%{_qt6_plugindir}/platforms/libqvkkhrdisplay.so
+%endif
 # Platformthemes
 %{_qt6_plugindir}/platformthemes/libqxdgdesktopportal.so
 #%%{_qt6_plugindir}/platformthemes/libqgtk3.so
