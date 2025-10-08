@@ -29,6 +29,12 @@ Source10: macros.qt6-qtbase
 
 Patch10: 0010-disable-arm32-pixman-simd.patch
 
+# upstream patches
+Patch100: CVE-2025-3512-qtbase-6.8.patch
+Patch101: CVE-2025-4211-qtbase-6.8.patch
+Patch102: CVE-2025-5455-qtbase-6.8.patch
+
+
 BuildRequires: qt6-rpm-macros
 BuildRequires: cups-devel
 BuildRequires: desktop-file-utils
