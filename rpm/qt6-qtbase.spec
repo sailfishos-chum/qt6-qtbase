@@ -1,4 +1,4 @@
-%global qt_version 6.7.2
+%global qt_version 6.8.3
 
 # Disable automatic .la file removal
 %global __brp_remove_la_files %nil
@@ -16,7 +16,7 @@
 
 Name: qt6-qtbase
 Summary: Qt6 - QtBase components
-Version: 6.7.2
+Version: 6.8.3
 Release: 0%{?dist}
 
 # See LGPL_EXCEPTIONS.txt, for exception details
