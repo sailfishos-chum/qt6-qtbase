@@ -287,6 +287,11 @@ rm -r %{buildroot}%{_qt6_mkspecsdir}/features/uikit
 #Remove unversioned files that clash with qt5/chooser
 rm %{buildroot}/%{_bindir}/qmake
 
+#Remove Android development utilities:
+rm %{buildroot}/%{_bindir}/androiddeployqt
+rm %{buildroot}/%{_bindir}/androiddeployqt6
+rm %{buildroot}/%{_bindir}/androidtestrunner
+
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
@@ -367,9 +372,9 @@ rm %{buildroot}/%{_bindir}/qmake
 %dir %{_qt6_libdir}/cmake/Qt6Widgets
 %dir %{_qt6_libdir}/cmake/Qt6WidgetsTools
 %dir %{_qt6_libdir}/cmake/Qt6Xml
-%{_bindir}/androiddeployqt
-%{_bindir}/androiddeployqt6
-%{_bindir}/androidtestrunner
+#%%{_bindir}/androiddeployqt
+#%%{_bindir}/androiddeployqt6
+#%%{_bindir}/androidtestrunner
 %{_bindir}/qdbuscpp2xml*
 %{_bindir}/qdbusxml2cpp*
 %{_bindir}/qmake6
