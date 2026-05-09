@@ -42,6 +42,7 @@ Patch54: qtbase-cxxflag.patch
 #Patch101: CVE-2025-4211-qtbase-6.8.patch
 #Patch102: CVE-2025-5455-qtbase-6.8.patch
 
+Patch103: dont-use-statxmntid.patch
 
 BuildRequires: cmake
 BuildRequires: ninja
