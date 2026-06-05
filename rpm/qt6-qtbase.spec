@@ -123,6 +123,10 @@ Requires: pkgconfig(glesv2)
 Requires: pkgconfig(xkbcommon)
 Requires: qt6-rpm-macros
 Requires: clang >= 3.7.0
+%if %{with vulkan}
+Requires: vulkan-headers
+%endif
+
 %description devel
 %{summary}.
 
