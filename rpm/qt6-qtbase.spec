@@ -431,6 +431,7 @@ rm %{buildroot}/%{_bindir}/qmake
 %{_qt6_libdir}/libQt6Xml.prl
 %{_qt6_libdir}/libQt6Xml.so
 %{_qt6_libdir}/cmake/Qt6/3rdparty/extra-cmake-modules/REUSE.toml
+%{_qt6_libdir}/cmake/Qt6/3rdparty/*ECMEnableSanitizers*.patch
 %{_qt6_libdir}/cmake/Qt6/3rdparty/kwin/REUSE.toml
 %{_qt6_libdir}/cmake/Qt6/*.h.in
 %{_qt6_libdir}/cmake/Qt6/*.cmake
